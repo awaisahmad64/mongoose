@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 const Student = require('./Student');
+require('dotenv').config();
 mongoose.set('strictQuery', false);
+const DB = process.env.DATABASE;
 mongoose.connect(
-  'mongodb://localhost/mydatabase',
+  DB,
   () => {
     console.log('conneted');
   },
